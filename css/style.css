@@ -58,6 +58,7 @@ body {
 }
 
 .aside {
+  font-family: "Montserrat", sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -405,6 +406,7 @@ body {
 }
 
 .header__btn {
+  font-family: "Montserrat", sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
