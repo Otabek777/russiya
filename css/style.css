@@ -1,4 +1,34 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "TT Firs Text Trial";
+  src: url("../font/tt_fors/TT_Fors_Trial_Regular.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Livret Text Trial";
+  src: url("../font/tt_livret_text/TT Livret Text Trial Light.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Livret Text Trial";
+  src: url("../font/tt_livret_text/TT Livret Text Trial Light Italic.ttf");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "TT Livret Text Trial";
+  src: url("../font/tt_livret_text/TT Livret Text Trial Medium.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Livret Text Trial";
+  src: url("../font/tt_livret_text/TT Livret Text Trial Medium Italic.ttf");
+  font-weight: 600;
+  font-style: italic;
+}
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -46,9 +76,8 @@ ul, ol {
 }
 
 body {
-  font-family: "Playfair Display", serif;
   background: rgb(22, 21, 21);
-  color: #fff;
+  color: var(--white);
 }
 
 .main {
@@ -58,7 +87,7 @@ body {
 }
 
 .aside {
-  font-family: "Montserrat", sans-serif;
+  font-family: "TT Firs Text Trial", sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -165,6 +194,7 @@ body {
 }
 .aside__accordeon .btn span {
   min-width: 56px;
+  font-family: TT Livret Text Trial;
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
@@ -181,6 +211,7 @@ body {
   overflow: hidden;
 }
 .aside__accordeon .block li {
+  font-family: "TT Livret Text Trial", sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
@@ -446,6 +477,7 @@ body {
   padding-top: 32px;
 }
 .content h6 {
+  font-family: "TT Livret Text Trial", sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
@@ -507,6 +539,7 @@ body {
 
 h1 {
   margin: 64px 0 72px 0;
+  font-family: "TT Livret Text Trial", sans-serif;
   font-weight: 600;
   font-style: italic;
   font-size: 32px;
@@ -536,6 +569,16 @@ h1::after {
   background: url(../img/after.svg) no-repeat center;
 }
 
+h2 {
+  font-family: "TT Livret Text Trial", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 32px;
+  line-height: 48px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
 .content__wrap {
   padding-top: 64px;
   padding-bottom: 64px;
@@ -544,6 +587,7 @@ h1::after {
 
 .content__text {
   margin-bottom: 32px;
+  font-family: "TT Livret Text Trial", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -553,6 +597,9 @@ h1::after {
 }
 .content__text b {
   font-weight: 600;
+}
+.content__text i {
+  font-style: italic;
 }
 
 .main.close .aside {

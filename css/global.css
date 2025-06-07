@@ -1,0 +1,195 @@
+@import url(style.css);
+/* Переменные */
+:root {
+  /* Цвета */
+  --yellow: #FFE609;
+  --green: #B2FF00;
+  --red: #FF0004;
+  --white: #ffffff;
+  --black: #000000;
+  --purple: #510060;
+  --grey: rgba(255, 255, 255, 0.05);
+
+  /* Шрифты */
+  --primary: 'TT Runs Trial';
+  --secondary: 'TT Interphases Pro Trial';
+
+  /* Жирность */
+  --bold: 700;
+  --medium: 500;
+  --regular: 300;
+
+  /* Границы и переходы */
+  --border: rgba(255, 255, 255, 0.05);
+  --fill: 100%;
+  --center: center;
+  --flex-end: flex-end;
+  --flex-start: flex-start;
+  --animate: all 0.3s ease;
+  --opacity__25: opacity(0.25);
+  --opacity__50: opacity(0.5);
+  --opacity__75: opacity(0.75);
+  --opacity__100: opacity(1);
+  --blur: blur(7.5px);
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Мобильные (до 576px) */
+@media (max-width: 576px) {
+  :root {
+    --zr: 0.25rem; 
+    --xs: 0.5rem;   
+    --sm: 0.75rem; 
+    --md: 0.9rem;   
+    --lg: 1.1rem;  
+    --xl: 1.25rem;    
+    --xxl: 1.5rem; 
+    --hg: 2rem;   
+  }
+  /* main {
+    width: calc(100% - 1rem);
+    padding-top: 72px; Фиксированное значение, чтобы не зависеть от rem
+    margin: 0 auto;
+  } */
+  /* footer {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    width: calc(100% - 1rem);
+  }
+  header {
+    width: calc(100% - 1rem);
+    position: fixed;
+  } */
+}
+
+/* Планшеты (577px–768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+  :root {
+    --zr: 0.25rem; 
+    --xs: 0.5rem;  
+    --sm: 0.75rem; 
+    --md: 1rem;    
+    --lg: 1.5rem;  
+    --xl: 1.7rem;    
+    --xxl: 2.2rem; 
+    --hg: 3rem;   
+  }
+  /* main {
+    width: 96%;
+    padding-top: var(--lg);
+    margin: 0 auto;
+  } */
+  /* footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  } */
+}
+
+/* Маленькие десктопы (769px–992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+  :root {
+    --zr: 0.25rem; 
+    --xs: 0.5rem;  
+    --sm: 0.75rem; 
+    --md: 1rem;    
+    --lg: 1.5rem;  
+    --xl: 1.7rem;    
+    --xxl: 2.2rem; 
+    --hg: 3rem;   
+  }
+  /* main {
+    width: 98%;
+    padding-top: 112px; Примерное значение
+    margin: 0 auto;
+  }
+  footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  header {
+    width: 100%;
+    z-index: 999;
+    position: fixed;
+  } */
+  .web {
+    width: 92%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+  }
+}
+
+/* Средние десктопы (993px–1336px) */
+@media (min-width: 993px) {
+  :root {
+    --zr: 0.25rem; 
+    --xs: 0.5rem;  
+    --sm: 0.75rem; 
+    --md: 0.9rem;    
+    --lg: 1rem;  
+    --xl: 1.5rem;    
+    --xxl: 2rem; 
+    --hg: 3rem;   
+  }
+  /* main {
+    width: 92%;
+    padding-top: 128px; Оставляем как есть
+    margin: 0 auto;
+  }
+  footer {
+    width: 92%;
+    margin: 0 auto;
+  }
+  header {
+    width: 100%;
+    z-index: 999;
+    position: fixed;
+  } */
+  .web {
+    width: 92%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+  }
+}
+
+/* Большие десктопы (1400px+) */
+@media (min-width: 1600px) {
+  :root {
+    --zr: 0.25rem; 
+    --xs: 0.5rem;  
+    --sm: 0.75rem; 
+    --md: 1rem;    
+    --lg: 1.5rem;  
+    --xl: 1.7rem;    
+    --xxl: 2.2rem; 
+    --hg: 3rem;   
+  }
+  /* main {
+    width: 80%;
+    padding-top: 128px;
+    margin: 0 auto;
+  }
+  footer {
+    width: 80%;
+    margin: 0 auto;
+  }
+  header {
+    width: 100%;
+    z-index: 999;
+    position: fixed;
+  } */
+  .web {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+  }
+}
+
+body.bodyWhite {
+  background: #ffffff;
+  color: var(--black);
+}
