@@ -175,7 +175,7 @@
                             </div>  
                         </div>
                     <div class="aside__slider">
-                        <img src="img/slider.svg" alt="">
+                        <input type="range" id="textScale" min="1" max="5" step="1" value="1">
                     </div>
                 </div>
                 <div class="aside__botttm">
@@ -185,7 +185,7 @@
                 </div>
             </div>
         </section>
-        <section class="content">
+        <section class="content scroll-container" id="content">
             <div class="content__video">
                 <video src="img/video.mp4" autoplay loop muted></video>
             </div>
@@ -327,6 +327,103 @@
     </main>
     <script src="js/jquery.min.js"></script>
     <script src="js/SmoothScroll.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        const slider = document.getElementById('textScale');
+        const content = document.getElementById('content');
+
+        slider.addEventListener('input', () => {
+        const scale = parseInt(slider.value);
+        content.classList.remove('x1', 'x2', 'x3', 'x4', 'x5');
+        content.classList.add(`x${scale}`);
+        });
+    </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Масштабирование текста</title>
+  <style>
+    html {
+      font-size: 100%; /* Базовый размер — 100% */
+      transition: font-size 0.3s ease;
+    }
+
+    body {
+      margin: 20px;
+    }
+
+    #sliderContainer {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="sliderContainer">
+    <label for="textScale">Масштаб текста (от x1.0 до x1.5): </label>
+    <input type="range" id="textScale" min="0" max="4" step="1" value="0">
+    <span id="scaleValue">x1.0</span>
+  </div>
+
+  <div id="content">
+    <p>Этот текст масштабируется от 100% до 150% размера.</p>
+    <p>Каждый шаг прибавляет 10% к размеру шрифта.</p>
+  </div>
+
+  <script>
+    const slider = document.getElementById('textScale');
+    const scaleDisplay = document.getElementById('scaleValue');
+
+    slider.addEventListener('input', () => {
+      const scaleStep = parseInt(slider.value); // от 0 до 4
+      const scaleFactor = 1.0 + scaleStep * 0.1; // от 1.0 до 1.5
+      const percent = scaleFactor * 100;
+      document.documentElement.style.fontSize = `${percent}%`;
+      scaleDisplay.textContent = `x${scaleFactor.toFixed(1)}`;
+    });
+  </script>
+</body>
+</html> -->

@@ -75,6 +75,7 @@ ul, ol {
 body {
     background: rgba(22, 21, 21, 1);
     color: var(--white);
+    transition: font-size 0.3s ease;
 }
 
 .main {
@@ -85,7 +86,7 @@ body {
     font-family: 'TT Firs Text Trial', sans-serif;
     display: flex;
     justify-content: center;
-    max-width: 19rem; /* 304px */
+    max-width: 304px; /* 304px */
     width: 100%;
     min-height: 100vh;
     border-right: 0.0625rem solid var(--White-5, rgba(255, 255, 255, 0.05)); /* 1px */
@@ -95,8 +96,8 @@ body {
 .aside__wrap {
     display: flex;
     flex-direction: column;
-    min-width: 19rem; /* 304px */
-    width: 19rem; /* 304px */
+    min-width: 304px; /* 304px */
+    width: 304px; /* 304px */
     max-height: 100vh;
     overflow-y: auto;
     position: relative;
@@ -314,6 +315,11 @@ body {
         margin-bottom: 0;
     }
 }
+.aside__slider {
+    input {
+        width: 100%;
+    }
+}
 .aside__botttm {
     margin-top: auto;
     padding: 2rem; /* 32px */
@@ -339,7 +345,7 @@ body {
 }
 // header
 .header {
-    max-width: 93.75rem; /* 1500px */
+    max-width: 100rem; /* 1600px */
     width: 100%;
     padding: 0 3rem; /* 0 48px */
     padding-top: 2.75rem; /* 44px */
@@ -468,6 +474,7 @@ h1 {
     letter-spacing: 0%;
     vertical-align: middle;
     position: relative;
+    transition: all .3s ease;
 }
 h1::before {
     content: "";
@@ -495,6 +502,16 @@ h2 {
     line-height: 3rem; /* 48px */
     margin-bottom: 2rem; /* 32px */
     text-align: center;
+    transition: all .3s ease;
+}
+h3 {
+    font-family: 'TT Livret Text Trial', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.5rem; /* 32px */
+    line-height: 1.5rem; /* 48px */
+    margin-bottom: 2rem; /* 32px */
+    transition: all .3s ease;
 }
 .content__wrap {
     padding-top: 4rem; /* 64px */
@@ -510,6 +527,7 @@ h2 {
     letter-spacing: 0%;
     vertical-align: middle;
     color: var(--White-100, rgba(255, 255, 255, 1));
+    transition: all .3s ease;
     b {
         font-weight: 600;
     }
@@ -530,3 +548,49 @@ h2 {
         }
     }
 }
+/* Классы для масштабирования */
+.x1 { font-size: 100%; }
+.x2 { 
+    h1,h2 {
+        font-size: 2.2rem;
+    }
+    h3 {
+        font-size: 1.65rem;
+    }
+    .content__text {
+        font-size: 1.1rem;
+    }
+ }
+.x3 { 
+    h1,h2 {
+        font-size: 2.4rem;
+    }
+    h3 {
+        font-size: 1.8rem;
+    }
+    .content__text {
+        font-size: 1.2rem;
+    }
+ }
+.x4 { 
+    h1,h2 {
+        font-size: 2.6rem;
+    }
+    h3 {
+        font-size: 1.95rem;
+    }
+    .content__text {
+        font-size: 1.3rem;
+    }
+ }
+.x5 { 
+    h1,h2 {
+        font-size: 2.8rem;
+    }
+    h3 {
+        font-size: 2.1rem;
+    }
+    .content__text {
+        font-size: 1.4rem;
+    }
+ }
