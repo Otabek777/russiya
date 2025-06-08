@@ -547,6 +547,7 @@ h1 {
   letter-spacing: 0%;
   vertical-align: middle;
   position: relative;
+  color: var(--white);
 }
 
 h1::before {
