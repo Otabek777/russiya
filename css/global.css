@@ -189,11 +189,6 @@
   }
 }
 
-body.bodyWhite {
-  background: #ffffff;
-  color: var(--black);
-}
-
 /* Размеры шрифтов */
 .fs__xs {
   font-size: var(--xs);
