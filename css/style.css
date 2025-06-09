@@ -1,34 +1,4 @@
 @charset "UTF-8";
-@font-face {
-  font-family: "TT Firs Text Trial";
-  src: url("../font/tt_fors/TT_Fors_Trial_Regular.ttf");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "TT Livret Text Trial";
-  src: url("../font/tt_livret_text/TT Livret Text Trial Light.ttf");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "TT Livret Text Trial";
-  src: url("../font/tt_livret_text/TT Livret Text Trial Light Italic.ttf");
-  font-weight: 400;
-  font-style: italic;
-}
-@font-face {
-  font-family: "TT Livret Text Trial";
-  src: url("../font/tt_livret_text/TT Livret Text Trial Medium.ttf");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "TT Livret Text Trial";
-  src: url("../font/tt_livret_text/TT Livret Text Trial Medium Italic.ttf");
-  font-weight: 600;
-  font-style: italic;
-}
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -91,7 +61,7 @@ body {
 }
 
 .aside {
-  font-family: "TT Firs Text Trial", sans-serif;
+  font-family: "Unbounded", sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -223,7 +193,7 @@ body {
 }
 .aside__accordeon .btn span {
   min-width: 3.5rem; /* 56px */
-  font-family: TT Livret Text Trial;
+  font-family: "Merriweather", serif;
   font-weight: var(--regular);
   font-size: var(--sm);
   line-height: var(--md);
@@ -240,7 +210,7 @@ body {
   overflow: hidden;
 }
 .aside__accordeon .block li {
-  font-family: "TT Livret Text Trial", sans-serif;
+  font-family: "Merriweather", serif;
   font-weight: var(--regular);
   font-size: var(--sm);
   line-height: var(--md);
@@ -472,7 +442,7 @@ body {
 }
 
 .header__btn {
-  font-family: "TT Firs Text Trial", sans-serif;
+  font-family: "Unbounded", sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -512,13 +482,123 @@ body {
   padding-top: var(--xxl); /* 2rem */
 }
 .content h6 {
-  font-family: "TT Livret Text Trial", sans-serif;
+  font-family: "Merriweather", serif;
   font-weight: var(--regular);
   font-size: var(--sm);
   line-height: var(--md);
   letter-spacing: 0%;
   vertical-align: middle;
   color: var(--White-50, rgba(255, 255, 255, 0.5));
+}
+.content h1 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 0.2em;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+}
+.content .subtitle {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.2em;
+  margin-bottom: 3em;
+  padding: 0 2em;
+}
+.content h2 {
+  font-size: 2em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  font-weight: normal;
+}
+.content h3 {
+  font-size: 1.5em;
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+  font-weight: normal;
+}
+.content p {
+  text-align: justify;
+  margin-bottom: 1.2em;
+  text-indent: 2em;
+}
+.content p:first-child,
+.content h2 + p,
+.content h3 + p,
+.content blockquote + p,
+.content hr + p,
+.content .no-indent {
+  text-indent: 0;
+}
+.content blockquote {
+  margin: 1.5em 0;
+  padding-left: 2em;
+  border-left: 3px solid #636060;
+  font-style: italic;
+  color: #dadada;
+}
+.content .dialogue {
+  margin: 1.5em 0;
+  padding-left: 2em;
+  font-style: italic;
+}
+.content .dialogue::before {
+  content: "— ";
+  margin-left: -1.5em;
+}
+.content .warning {
+  background-color: #161515;
+  border: 1px solid #636060;
+  padding: 1.5em;
+  margin: 2em 0;
+  border-radius: 5px;
+}
+.content .warning h3 {
+  margin-top: 0;
+}
+.content hr {
+  border: none;
+  text-align: center;
+  margin: 3em 0;
+}
+.content hr::before {
+  content: "* * *";
+  font-size: 1.2em;
+  letter-spacing: 0.5em;
+}
+.content strong {
+  font-weight: bold;
+}
+.content em {
+  font-style: italic;
+}
+.content .emphasis {
+  font-style: italic;
+  margin: 1.5em 0;
+}
+.content ol {
+  margin: 1.5em 0;
+  padding-left: 3em;
+}
+.content ol li {
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+.content .chapter-end {
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 2em 0;
+}
+.content .final-thought {
+  font-size: 1.1em;
+  font-style: italic;
+  text-align: center;
+  margin: 3em 0;
+  padding: 2em;
+  background-color: #161515;
+  border: 1px solid #636060;
+  border-radius: 5px;
+  color: #dadada;
 }
 
 .content::-webkit-scrollbar {
@@ -577,7 +657,7 @@ body {
 h1 {
   /* Original margin: 4rem 0 4.5rem 0. Changed to hg (3rem) as it's the largest available. */
   margin: var(--max) 0 var(--max) 0;
-  font-family: "TT Livret Text Trial", sans-serif;
+  font-family: "Merriweather", serif;
   font-weight: var(--medium);
   font-style: italic;
   font-size: var(--xxl);
@@ -610,7 +690,7 @@ h1::after {
 }
 
 h2 {
-  font-family: "TT Livret Text Trial", sans-serif;
+  font-family: "Merriweather", serif;
   font-weight: var(--medium);
   font-style: italic;
   font-size: var(--xxl);
@@ -622,7 +702,7 @@ h2 {
 }
 
 h3 {
-  font-family: "TT Livret Text Trial", sans-serif;
+  font-family: "Merriweather", serif;
   font-weight: var(--medium);
   font-style: italic;
   font-size: var(--lg);
@@ -641,7 +721,7 @@ h3 {
 
 .content__text {
   margin-bottom: var(--xxl); /* 2rem */
-  font-family: "TT Livret Text Trial", sans-serif;
+  font-family: "Merriweather", serif;
   font-weight: var(--regular);
   font-size: var(--md);
   line-height: var(--lg);
@@ -679,7 +759,7 @@ h3 {
 .x2 h3 {
   font-size: var(--xl);
 }
-.x2 .content__text {
+.x2 p {
   font-size: 1.1rem;
 }
 
@@ -689,7 +769,7 @@ h3 {
 .x3 h3 {
   font-size: 1.8rem;
 }
-.x3 .content__text {
+.x3 p {
   font-size: 1.2rem;
 }
 
@@ -699,7 +779,7 @@ h3 {
 .x4 h3 {
   font-size: 1.95rem;
 }
-.x4 .content__text {
+.x4 p {
   font-size: 1.3rem;
 }
 
@@ -709,7 +789,7 @@ h3 {
 .x5 h3 {
   font-size: 2.1rem;
 }
-.x5 .content__text {
+.x5 p {
   font-size: 1.4rem;
 }
 
@@ -719,6 +799,9 @@ body.bodyWhite {
 
 body.bodyWhite, body.bodySilver {
   color: var(--black);
+}
+body.bodyWhite .final-thought, body.bodyWhite .warning, body.bodySilver .final-thought, body.bodySilver .warning {
+  background: transparent;
 }
 body.bodyWhite h1::before, body.bodySilver h1::before {
   background: url(../img/before-black.svg) no-repeat center;
@@ -779,7 +862,7 @@ body.bodyWhite .content h6, body.bodySilver .content h6 {
 body.bodyWhite .content__wrap, body.bodySilver .content__wrap {
   border-top-color: var(--Black-10, rgba(0, 0, 0, 0.1));
 }
-body.bodyWhite .content__text, body.bodySilver .content__text {
+body.bodyWhite .content p, body.bodySilver .content p {
   color: var(--Black-100, rgb(0, 0, 0));
 }
 body.bodyWhite .aside__color h4 .icon, body.bodySilver .aside__color h4 .icon {

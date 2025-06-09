@@ -1,33 +1,34 @@
-@font-face {
-    font-family: 'TT Firs Text Trial';
-    src: url('../font/tt_fors/TT_Fors_Trial_Regular.ttf');
-    font-weight: 600;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'TT Livret Text Trial';
-    src: url('../font/tt_livret_text/TT\ Livret\ Text\ Trial\ Light.ttf');
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'TT Livret Text Trial';
-    src: url('../font/tt_livret_text/TT\ Livret\ Text\ Trial\ Light\ Italic.ttf');
-    font-weight: 400;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'TT Livret Text Trial';
-    src: url('../font/tt_livret_text/TT\ Livret\ Text\ Trial\ Medium.ttf');
-    font-weight: 600;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'TT Livret Text Trial';
-    src: url('../font/tt_livret_text/TT\ Livret\ Text\ Trial\ Medium\ Italic.ttf');
-    font-weight: 600;
-    font-style: italic;
-}
+// @font-face {
+//     font-family: 'TT Firs Text Trial';
+//     src: url('../font/tt_fors/TT_Fors_Trial_Regular.ttf');
+//     font-weight: 600;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'TT Livret Text Trial';
+//     src: url('../font/tt_livret_text/TT\ Livret\ Text\ Trial\ Light.ttf');
+//     font-weight: 400;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'TT Livret Text Trial';
+//     src: url('../font/tt_livret_text/TT\ Livret\ Text\ Trial\ Light\ Italic.ttf');
+//     font-weight: 400;
+//     font-style: italic;
+// }
+// @font-face {
+//     font-family: 'TT Livret Text Trial';
+//     src: url('../font/tt_livret_text/TT\ Livret\ Text\ Trial\ Medium.ttf');
+//     font-weight: 600;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'TT Livret Text Trial';
+//     src: url('../font/tt_livret_text/TT\ Livret\ Text\ Trial\ Medium\ Italic.ttf');
+//     font-weight: 600;
+//     font-style: italic;
+// }
+
 
 *, *::before, *::after {
     margin: 0;
@@ -84,7 +85,8 @@ body {
 }
 // aside
 .aside {
-    font-family: 'TT Firs Text Trial', sans-serif;
+    // font-family: 'TT Firs Text Trial', sans-serif;
+    font-family: "Unbounded", sans-serif;
     display: flex;
     justify-content: center;
     max-width: 304px; /* 304px */
@@ -193,7 +195,8 @@ body {
         cursor: pointer;
         span {
             min-width: 3.5rem; /* 56px */
-            font-family: TT Livret Text Trial;
+            // font-family: 'TT Livret Text Trial', sans-serif;
+            font-family: "Merriweather", serif;
             font-weight: var(--regular);
             font-size: var(--sm);
             line-height: var(--md);
@@ -210,7 +213,8 @@ body {
         height: 0;
         overflow: hidden;
         li {
-            font-family: 'TT Livret Text Trial', sans-serif;
+            // font-family: 'TT Livret Text Trial', sans-serif;
+            font-family: "Merriweather", serif;
             font-weight: var(--regular);
             font-size: var(--sm);
             line-height: var(--md);
@@ -401,7 +405,8 @@ body {
     border: 0;
 }
 .header__btn {
-    font-family: 'TT Firs Text Trial', sans-serif;
+    // font-family: 'TT Firs Text Trial', sans-serif;
+    font-family: "Unbounded", sans-serif;
     display: flex;
     align-items: center;
     font-weight: var(--medium);
@@ -436,13 +441,142 @@ body {
         padding-top: var(--xxl); /* 2rem */
     }
     h6 {
-        font-family: 'TT Livret Text Trial', sans-serif;
+        // font-family: 'TT Livret Text Trial', sans-serif;
+        font-family: "Merriweather", serif;
         font-weight: var(--regular);
         font-size: var(--sm);
         line-height: var(--md);
         letter-spacing: 0%;
         vertical-align: middle;
         color: var(--White-50, rgba(255, 255, 255, 0.5));
+    }
+    h1 {
+        font-size: 2.5em;
+        text-align: center;
+        margin-bottom: 0.2em;
+        font-weight: normal;
+        letter-spacing: 0.05em;
+    }
+    .subtitle {
+        text-align: center;
+        font-style: italic;
+        font-size: 1.2em;
+        margin-bottom: 3em;
+        padding: 0 2em;
+    }
+    
+    h2 {
+        font-size: 2em;
+        margin-top: 2em;
+        margin-bottom: 1em;
+        font-weight: normal;
+    }
+    
+    h3 {
+        font-size: 1.5em;
+        margin-top: 1.5em;
+        margin-bottom: 0.8em;
+        font-weight: normal;
+    }
+    
+    p {
+        text-align: justify;
+        margin-bottom: 1.2em;
+        text-indent: 2em;
+    }
+    
+    p:first-child,
+    h2 + p,
+    h3 + p,
+    blockquote + p,
+    hr + p,
+    .no-indent {
+        text-indent: 0;
+    }
+    
+    blockquote {
+        margin: 1.5em 0;
+        padding-left: 2em;
+        border-left: 3px solid #636060;
+        font-style: italic;
+        color: #dadada;
+    }
+    
+    .dialogue {
+        margin: 1.5em 0;
+        padding-left: 2em;
+        font-style: italic;
+    }
+    
+    .dialogue::before {
+        content: "— ";
+        margin-left: -1.5em;
+    }
+    
+    .warning {
+        background-color: #161515;
+        border: 1px solid #636060;
+        padding: 1.5em;
+        margin: 2em 0;
+        border-radius: 5px;
+    }
+    
+    .warning h3 {
+        margin-top: 0;
+    }
+    
+    hr {
+        border: none;
+        text-align: center;
+        margin: 3em 0;
+    }
+    
+    hr::before {
+        content: "* * *";
+        font-size: 1.2em;
+        letter-spacing: 0.5em;
+    }
+    
+    strong {
+        font-weight: bold;
+    }
+    
+    em {
+        font-style: italic;
+    }
+    
+    .emphasis {
+        font-style: italic;
+        margin: 1.5em 0;
+    }
+    
+    ol {
+        margin: 1.5em 0;
+        padding-left: 3em;
+    }
+    
+    ol li {
+        margin-bottom: 1em;
+        line-height: 1.6;
+    }
+    
+    .chapter-end {
+        text-align: center;
+        font-size: 1.1em;
+        font-weight: bold;
+        margin: 2em 0;
+    }
+    
+    .final-thought {
+        font-size: 1.1em;
+        font-style: italic;
+        text-align: center;
+        margin: 3em 0;
+        padding: 2em;
+        background-color: #161515;
+        border: 1px solid #636060;
+        border-radius: 5px;
+        color: #dadada;
     }
 }
 .content::-webkit-scrollbar {
@@ -491,7 +625,8 @@ body {
 h1 {
     /* Original margin: 4rem 0 4.5rem 0. Changed to hg (3rem) as it's the largest available. */
     margin: var(--max) 0 var(--max) 0;
-    font-family: 'TT Livret Text Trial', sans-serif;
+    // font-family: 'TT Livret Text Trial', sans-serif;
+    font-family: "Merriweather", serif;
     font-weight: var(--medium);
     font-style: italic;
     font-size: var(--xxl);
@@ -520,7 +655,8 @@ h1::after {
     background: url(../img/after.svg) no-repeat center;
 }
 h2 {
-    font-family: 'TT Livret Text Trial', sans-serif;
+    // font-family: 'TT Livret Text Trial', sans-serif;
+    font-family: "Merriweather", serif;
     font-weight: var(--medium);
     font-style: italic;
     font-size: var(--xxl);
@@ -530,7 +666,8 @@ h2 {
     transition: all .3s ease;
 }
 h3 {
-    font-family: 'TT Livret Text Trial', sans-serif;
+    // font-family: 'TT Livret Text Trial', sans-serif;
+    font-family: "Merriweather", serif;
     font-weight: var(--medium);
     font-style: italic;
     font-size: var(--lg);
@@ -546,7 +683,8 @@ h3 {
 }
 .content__text {
     margin-bottom: var(--xxl); /* 2rem */
-    font-family: 'TT Livret Text Trial', sans-serif;
+    // font-family: 'TT Livret Text Trial', sans-serif;
+    font-family: "Merriweather", serif;
     font-weight: var(--regular);
     font-size: var(--md);
     line-height: var(--lg);
@@ -583,7 +721,7 @@ h3 {
     h3 {
         font-size: var(--xl);
     }
-    .content__text {
+    p {
         font-size: 1.1rem;
     }
 }
@@ -594,7 +732,7 @@ h3 {
     h3 {
         font-size: 1.8rem;
     }
-    .content__text {
+    p {
         font-size: 1.2rem;
     }
 }
@@ -605,7 +743,7 @@ h3 {
     h3 {
         font-size: 1.95rem;
     }
-    .content__text {
+    p {
         font-size: 1.3rem;
     }
 }
@@ -616,7 +754,7 @@ h3 {
     h3 {
         font-size: 2.1rem;
     }
-    .content__text {
+    p {
         font-size: 1.4rem;
     }
 }
@@ -625,6 +763,9 @@ body.bodyWhite {
 }
 body.bodyWhite, body.bodySilver {
   color: var(--black);
+  .final-thought, .warning {
+    background: transparent;
+  }
   h1::before {
     background: url(../img/before-black.svg) no-repeat center;
   }
@@ -683,7 +824,7 @@ body.bodyWhite, body.bodySilver {
   .content__wrap {
     border-top-color: var(--Black-10, rgba(0, 0, 0, 0.1))
   }
-  .content__text {
+  .content p {
     color: var(--Black-100, rgba(0, 0, 0, 1));
   }
   .aside__color h4 .icon {
