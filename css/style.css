@@ -566,6 +566,8 @@ body::-webkit-scrollbar-button {
   background: rgba(0, 0, 0, 0.15);
   padding-bottom: 10px;
   position: relative;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 .content .container {
   position: relative;

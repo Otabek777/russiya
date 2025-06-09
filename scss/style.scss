@@ -499,6 +499,7 @@ body::-webkit-scrollbar-button {
     // overflow-y: auto;
     padding-bottom: 10px;
     position: relative;
+    transition: all .5s ease;
     .container {
         position: relative;
         z-index: 2;
