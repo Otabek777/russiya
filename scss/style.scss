@@ -480,14 +480,15 @@ body::-webkit-scrollbar-button {
     opacity: 0;
     transition: all .3s ease;
 }
-.header__btn:hover {
+.header__btn:hover, .header__btn.active {
     border-color: transparent !important;
     color: #fff !important;
     .icon {
         background: url(../img/header-btn.svg) no-repeat center !important;
     }
 }
-.header__btn:hover::after {
+
+.header__btn:hover::after, .header__btn.active::after {
     opacity: 1;
 }
 // content

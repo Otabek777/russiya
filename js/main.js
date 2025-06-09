@@ -25,6 +25,11 @@ $('.aside a').on('click', function (e) {
     }
 });
 
+$(".header__btn").click(function() {
+    $(this).toggleClass("active");
+});
+
+
 $(".color_items .item").click(function() {
     $(".color_items .item").removeClass("active");
     $(this).addClass("active");

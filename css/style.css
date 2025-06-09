@@ -547,15 +547,15 @@ body::-webkit-scrollbar-button {
   transition: all 0.3s ease;
 }
 
-.header__btn:hover {
+.header__btn:hover, .header__btn.active {
   border-color: transparent !important;
   color: #fff !important;
 }
-.header__btn:hover .icon {
+.header__btn:hover .icon, .header__btn.active .icon {
   background: url(../img/header-btn.svg) no-repeat center !important;
 }
 
-.header__btn:hover::after {
+.header__btn:hover::after, .header__btn.active::after {
   opacity: 1;
 }
 
