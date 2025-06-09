@@ -13,24 +13,17 @@ function raf(time) {
     requestAnimationFrame(raf);
 }
 requestAnimationFrame(raf);
-// Animate on Scroll
-const animatedElements = document.querySelectorAll('.animate-on-scroll');
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-};
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-        } else {
-            entry.target.classList.remove('is-visible');
-        }
-    });
+
+$('.aside a').on('click', function (e) {
+    e.preventDefault();
+    const target = $(this).attr('href');
+    if (target && $(target).length) {
+        const scrollTarget = $(target).offset().top - 30;
+        $('html, body').animate({
+            scrollTop: scrollTarget
+        }, 1000);
+    }
 });
-animatedElements.forEach(el => observer.observe(el));
 
 $(".color_items .item").click(function() {
     $(".color_items .item").removeClass("active");
@@ -56,6 +49,7 @@ $(".header__icon").click(function() {
     $(".main").toggleClass("close");
 });
 $(".aside__accordeon .btn").click(function() {
+    $(".aside__accordeon .btn").removeClass("active");
     $(this).toggleClass("active");
 });
 $(".color_items .item").click(function() {

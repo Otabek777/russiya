@@ -74,14 +74,30 @@ ul, ol {
 }
 
 body {
+    min-height: 100vh;
     background: rgba(22, 21, 21, 1);
     color: var(--white);
     transition: font-size 0.3s ease;
     transition: background-color 0.3s ease;
 }
+body::-webkit-scrollbar {
+  width: 0.5rem; /* 8px */
+}
+
+body::-webkit-scrollbar-track {
+  background: rgb(51, 49, 49); 
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgb(99, 96, 96); 
+}
+
+body::-webkit-scrollbar-button {
+  display: none; 
+}
 
 .main {
-    display: flex;
+    position: relative;
 }
 // aside
 .aside {
@@ -95,6 +111,9 @@ body {
     border-right: 0.0625rem solid var(--White-5, rgba(255, 255, 255, 0.05)); /* 1px */
     transition: all .5s ease;
     overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 .aside__wrap {
     display: flex;
@@ -161,7 +180,7 @@ body {
     border-top: 0.0625rem solid var(--White-5, rgba(255, 255, 255, 0.05)); /* 1px */
     padding: var(--lg) var(--xxl); /* 1.5rem 2rem */
     h5 {
-        font-weight: var(--medium);
+        font-weight: var(--regular);
         font-size: var(--sm);
         line-height: var(--md);
         letter-spacing: 0%;
@@ -185,7 +204,7 @@ body {
     margin-bottom: var(--md);
     .btn {
         display: flex;
-        font-weight: var(--medium);
+        font-weight: var(--regular);
         font-size: var(--sm);
         line-height: var(--md);
         letter-spacing: 0%;
@@ -223,6 +242,9 @@ body {
             margin-bottom: var(--md);
             padding-left: var(--sm); /* 0.8125rem */
             position: relative;
+            a {
+                color: #fff;
+            }
         }
         li::before {
             content: "•";
@@ -253,7 +275,7 @@ body {
     h4 {
         display: flex;
         align-items: center;
-        font-weight: var(--medium);
+        font-weight: var(--regular);
         font-size: var(--sm);
         line-height: var(--md);
         letter-spacing: 0%;
@@ -292,7 +314,7 @@ body {
         p {
             width: 0;
             overflow: hidden;
-            font-weight: var(--medium);
+            font-weight: var(--regular);
             font-size: var(--sm);
             line-height: var(--md);
             letter-spacing: 0%;
@@ -319,7 +341,7 @@ body {
         display: flex;
         justify-content: space-between;
         margin-bottom: var(--xxl); /* 2.5rem */
-        font-weight: var(--medium);
+        font-weight: var(--regular);
         font-size: var(--sm);
         line-height: var(--md);
         letter-spacing: 0%;
@@ -381,7 +403,7 @@ body {
     transition: all .5s ease;
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 3;
 }
 .header__box {
     display: flex;
@@ -420,20 +442,62 @@ body {
     border: 0.0625rem solid var(--White-10, rgba(255, 255, 255, 0.1)); /* 1px */
     border-radius: 6.25rem; /* 100px */
     margin-left: var(--md);
+    overflow: hidden;
+    transition: all .3s ease;
+    position: relative;
     .icon {
         width: 1.5rem; /* 24px */
         height: 1.5rem; /* 24px */
         background: url(../img/header-btn.svg) no-repeat center;
         margin-right: var(--sm); /* 0.6875rem */
+        position: relative;
+        z-index: 2;
+        transition: all .3s ease;
     }
+    span {
+        position: relative;
+        z-index: 2;
+    }
+}
+@keyframes headerBtn {
+  from {transform: translate(-50%, -50%) rotate(0);}
+  to {transform: translate(-50%, -50%) rotate(360deg);}
+}
+.header__btn::after {
+    width: 220px;
+    height: 220px;
+    content: "" ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #833AB4;
+    background: linear-gradient(90deg,rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    animation-name: headerBtn;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    opacity: 0;
+    transition: all .3s ease;
+}
+.header__btn:hover {
+    border-color: transparent !important;
+    color: #fff !important;
+    .icon {
+        background: url(../img/header-btn.svg) no-repeat center !important;
+    }
+}
+.header__btn:hover::after {
+    opacity: 1;
 }
 // content
 .content {
-    width: 100%;
+    width: calc(100% - 304px);
     min-height: 100vh;
-    max-height: 100vh;
+    margin-left: auto;
     background: rgba(0, 0, 0, 0.15);
-    overflow-y: auto;
+    // overflow-y: auto;
+    padding-bottom: 10px;
     position: relative;
     .container {
         position: relative;
@@ -579,21 +643,6 @@ body {
         color: #dadada;
     }
 }
-.content::-webkit-scrollbar {
-  width: 0.5rem; /* 8px */
-}
-
-.content::-webkit-scrollbar-track {
-  background: rgb(51, 49, 49); 
-}
-
-.content::-webkit-scrollbar-thumb {
-  background: rgb(99, 96, 96); 
-}
-
-.content::-webkit-scrollbar-button {
-  display: none; 
-}
 
 .content__video {
     position: absolute;
@@ -707,25 +756,26 @@ h3 {
         max-width: 100%;
     }
     .content {
+        width: 100%;
         .container {
             max-width: 79rem; /* 1264px */
         }
     }
 }
 /* Классы для масштабирования */
-.x1 { font-size: 100%; }
-.x2 { 
-    h1,h2 {
-        font-size: var(--xxl);
-    }
-    h3 {
-        font-size: var(--xl);
-    }
-    p {
-        font-size: 1.1rem;
-    }
-}
-.x3 { 
+// .x1 { font-size: 100%; }
+// .x2 {
+//     h1,h2 {
+//         font-size: var(--xxl);
+//     }
+//     h3 {
+//         font-size: var(--xl);
+//     }
+//     p {
+//         font-size: 1.1rem;
+//     }
+// }
+.x1 {
     h1,h2 {
         font-size: 2.4rem;
     }
@@ -736,7 +786,7 @@ h3 {
         font-size: 1.2rem;
     }
 }
-.x4 { 
+.x2 { 
     h1,h2 {
         font-size: 2.6rem;
     }
@@ -747,7 +797,7 @@ h3 {
         font-size: 1.3rem;
     }
 }
-.x5 { 
+.x3 { 
     h1,h2 {
         font-size: 2.8rem;
     }
@@ -758,11 +808,39 @@ h3 {
         font-size: 1.4rem;
     }
 }
+.x4 {
+    h1,h2 {
+        font-size: 3rem;
+    }
+    h3 {
+        font-size: 2.25rem;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+}
+.x5 {
+    h1,h2 {
+        font-size: 3.2rem;
+    }
+    h3 {
+        font-size: 2.4rem;
+    }
+    p {
+        font-size: 1.6rem;
+    }
+}
 body.bodyWhite {
     background: #ffffff;
 }
 body.bodyWhite, body.bodySilver {
   color: var(--black);
+  .aside__accordeon .block li a {
+    color: #000;
+  }
+  .aside__accordeon .block li::before {
+    color: #000;
+  }
   .final-thought, .warning {
     background: transparent;
   }
