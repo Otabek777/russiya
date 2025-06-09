@@ -16,8 +16,8 @@
 
   /* Жирность */
   --bold: 700;
-  --medium: 500;
-  --regular: 300;
+  --medium: 600;
+  --regular: 400;
 
   /* Границы и переходы */
   --border: rgba(255, 255, 255, 0.05);
@@ -166,6 +166,7 @@
     --xl: 1.7rem;    
     --xxl: 2.2rem; 
     --hg: 3rem;   
+    --max: 4rem;   
   }
   /* main {
     width: 80%;
