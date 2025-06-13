@@ -14,16 +14,38 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
-$('.aside a').on('click', function (e) {
-    e.preventDefault();
-    const target = $(this).attr('href');
-    if (target && $(target).length) {
-        const scrollTarget = $(target).offset().top - 30;
-        $('html, body').animate({
-            scrollTop: scrollTarget
-        }, 1000);
-    }
+$(window).on('scroll', function () {
+    $(".header").toggleClass("fixed", $(this).scrollTop() > 50);
 });
+
+
+
+if (window.innerWidth < 1023) {
+    $(".header__icon").click(function() {
+        $("body").toggleClass("mobileHidden");
+    });
+    $('.aside a').on('click', function (e) {
+        e.preventDefault();
+        const target = $(this).attr('href');
+        if (target && $(target).length) {
+            const scrollTarget = $(target).offset().top - 80;
+            $('html, body').animate({
+                scrollTop: scrollTarget
+            }, 1000);
+        }
+    });
+} else {
+    $('.aside a').on('click', function (e) {
+        e.preventDefault();
+        const target = $(this).attr('href');
+        if (target && $(target).length) {
+            const scrollTarget = $(target).offset().top - 30;
+            $('html, body').animate({
+                scrollTop: scrollTarget
+            }, 1000);
+        }
+    });
+}
 
 $(".header__btn").click(function() {
     $(this).toggleClass("active");
@@ -61,3 +83,11 @@ $(".color_items .item").click(function() {
     $(".color_items .item").removeClass("active");
     $(this).addClass("active");
 });
+
+function doSmthIfEqual(size) {
+   if (size === '1024px') {
+    /*Ваш код*/
+    alert(1)
+  }
+}
+doSmthIfEqual();

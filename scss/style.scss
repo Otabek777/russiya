@@ -67,7 +67,8 @@ ul, ol {
     margin: 0;
 }
 .container {
-    max-width: 59rem; /* 944px */
+    max-width: 61rem; /* 944px */
+    padding: 0 1rem;
     width: 100%;
     margin: 0 auto;
     transition: all .5s ease;
@@ -924,5 +925,83 @@ body.bodySilver {
     }
     .aside__logo {
         background: #E9E6CC;
+    }
+}
+
+// media
+@media screen and (max-width: 1700px) {
+    .header__box {
+        transition: all .3s ease;
+        border-radius: 100px;
+    }
+    .header.fixed {
+        padding-top: 30px;
+        .header__box {
+                padding: 4px;
+                padding-left: 10px;
+                background: var(--White-30, rgba(255, 255, 255, 0.1));
+                border-color: var(--Black-5, rgba(0, 0, 0, 0.05));
+                backdrop-filter: blur(1.125rem);
+        }
+    }
+}
+@media screen and (max-width: 1400px) {
+    .header {
+        padding: 1rem;
+    }
+    .header.fixed {
+        padding-top: 1rem;
+    }
+    .content__video video {
+        width: auto;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 1023px) {
+    body.mobileHidden {
+        overflow: hidden;
+    }
+    .aside {
+        max-width: 100%;
+        left: -100%;
+        background: var(--White-30, rgba(255, 255, 255, 0.1));
+        border-color: var(--Black-5, rgba(0, 0, 0, 0.05));
+        backdrop-filter: blur(1.5em);
+    }
+    .aside__logo {
+        background: transparent;
+        position: relative;
+    }
+    body.bodyWhite .aside__logo, body.bodySilver .aside__logo {
+        background: transparent;
+    }
+    .aside__wrap {
+        max-width: 100%;
+        width: 100%;
+        padding-top: 4rem;
+    }
+    .content {
+        width: 100%;
+    }
+    .main.close .header {
+        padding-top: 1rem;
+        .header__box {
+                padding: 4px;
+                padding-left: 10px;
+                background: var(--White-30, rgba(255, 255, 255, 0.1));
+                border-color: var(--Black-5, rgba(0, 0, 0, 0.05));
+                backdrop-filter: blur(1.125rem);
+        }
+    }
+    .main.close .aside {
+        max-width: 100%;
+        left: 0;
+        z-index: 9;
+    }
+    .header {
+        z-index: 99;
+    }
+    .content .container {
+        padding-top: var(--hg);
     }
 }
