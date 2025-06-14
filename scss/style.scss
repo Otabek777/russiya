@@ -1004,6 +1004,20 @@ body.bodySilver {
     body.mobileHidden {
         overflow: hidden;
     }
+    .video_slider {
+        max-width: 90%;
+    }
+    .video_slider .wrap {
+        margin: 0 4px;
+    }
+    .video_slider .block {
+        height: 220px;
+        border-radius: 8px;
+        video {
+            width: auto;
+            height: 100%;
+        }
+    }
     .aside {
         max-width: 100%;
         left: -100%;
