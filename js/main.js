@@ -42,6 +42,19 @@ $(function () {
         $(this).toggleClass("active");
     });
 
+    $(document).ready(function() {
+        $('.header__btn').on('click', function() {
+            const $span = $(this).find('span');
+            const currentText = $span.text().trim();
+
+            if (currentText === 'Play') {
+                $span.text('Stop');
+            } else {
+                $span.text('Play');
+            }
+        });
+    });
+
     // Активные элементы выбора цвета
     $(".color_items .item").click(function () {
         $(".color_items .item").removeClass("active");
