@@ -14,80 +14,56 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
-$(window).on('scroll', function () {
-    $(".header").toggleClass("fixed", $(this).scrollTop() > 50);
-});
+$(function () {
+    // Фиксированная шапка при прокрутке
+    $(window).on('scroll', function () {
+        $(".header").toggleClass("fixed", $(this).scrollTop() > 50);
+    });
 
-
-
-if (window.innerWidth < 1023) {
-    $(".header__icon").click(function() {
+    // Обработка клика по иконке меню
+    $(".header__icon").click(function () {
         $("body").toggleClass("mobileHidden");
+        $(".main").toggleClass("close");
     });
+
+    // Обработка прокрутки при клике на ссылки aside
     $('.aside a').on('click', function (e) {
         e.preventDefault();
         const target = $(this).attr('href');
         if (target && $(target).length) {
-            const scrollTarget = $(target).offset().top - 80;
-            $('html, body').animate({
-                scrollTop: scrollTarget
-            }, 1000);
+            const offset = window.innerWidth < 1023 ? 80 : 30;
+            const scrollTarget = $(target).offset().top - offset;
+            $('html, body').animate({ scrollTop: scrollTarget }, 1000);
         }
     });
-} else {
-    $('.aside a').on('click', function (e) {
-        e.preventDefault();
-        const target = $(this).attr('href');
-        if (target && $(target).length) {
-            const scrollTarget = $(target).offset().top - 30;
-            $('html, body').animate({
-                scrollTop: scrollTarget
-            }, 1000);
-        }
+
+    // Кнопка в шапке (допустим, для бургер-меню)
+    $(".header__btn").click(function () {
+        $(this).toggleClass("active");
     });
-}
 
-$(".header__btn").click(function() {
-    $(this).toggleClass("active");
-});
+    // Активные элементы выбора цвета
+    $(".color_items .item").click(function () {
+        $(".color_items .item").removeClass("active");
+        $(this).addClass("active");
+    });
 
+    // Изменение цвета body
+    $("#bodyColor1").click(function () {
+        $("body").removeClass("bodyBlack bodySilver").addClass("bodyWhite");
+    });
 
-$(".color_items .item").click(function() {
-    $(".color_items .item").removeClass("active");
-    $(this).addClass("active");
-});
-$("#bodyColor1").click(function() {
-    $("body").removeClass("bodyBlack");
-    $("body").removeClass("bodySilver");
-    $("body").addClass("bodyWhite");
-});
-$("#bodyColor2").click(function() {
-    $("body").removeClass("bodyWhite");
-    $("body").removeClass("bodySilver");
-    $("body").addClass("bodyBlack");
-});
-$("#bodyColor3").click(function() {
-    $("body").removeClass("bodyBlack");
-    $("body").removeClass("bodyWhite");
-    $("body").addClass("bodySilver");
-});
+    $("#bodyColor2").click(function () {
+        $("body").removeClass("bodyWhite bodySilver").addClass("bodyBlack");
+    });
 
-$(".header__icon").click(function() {
-    $(".main").toggleClass("close");
-});
-$(".aside__accordeon .btn").click(function() {
-    $(".aside__accordeon .btn").removeClass("active");
-    $(this).toggleClass("active");
-});
-$(".color_items .item").click(function() {
-    $(".color_items .item").removeClass("active");
-    $(this).addClass("active");
-});
+    $("#bodyColor3").click(function () {
+        $("body").removeClass("bodyBlack bodyWhite").addClass("bodySilver");
+    });
 
-function doSmthIfEqual(size) {
-   if (size === '1024px') {
-    /*Ваш код*/
-    alert(1)
-  }
-}
-doSmthIfEqual();
+    // Аккордеон в aside
+    $(".aside__accordeon .btn").click(function () {
+        $(".aside__accordeon .btn").removeClass("active");
+        $(this).toggleClass("active");
+    });
+});

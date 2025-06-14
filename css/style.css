@@ -979,6 +979,57 @@ body.bodySilver .aside__logo {
   background: #E9E6CC;
 }
 
+.video_slider_wrap {
+  width: 100%;
+  overflow: hidden;
+}
+.video_slider_wrap p {
+  max-width: 944px;
+  width: 100%;
+  font-family: "TT Norms Pro Mono Trl", sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 24px;
+  color: var(--White-50, rgba(255, 255, 255, 0.5));
+}
+
+.video_slider {
+  max-width: 1264px;
+  width: 100%;
+  margin: 0 auto;
+}
+.video_slider .slick-list {
+  overflow: visible;
+}
+.video_slider .wrap {
+  margin: 0 16px;
+}
+.video_slider .block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 688px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+.video_slider .block video {
+  width: 100%;
+  height: auto;
+}
+
 @media screen and (max-width: 1700px) {
   .header__box {
     -webkit-transition: all 0.3s ease;
